@@ -1,32 +1,46 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 
 void main() {
-  runApp(MaterialApp(
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
       home: Scaffold(
-    backgroundColor: Colors.lightGreenAccent,
-    appBar: AppBar(
-      title: Text("This is my first app!!!"),
-      backgroundColor: Colors.blue[500],
-    ),
-    body: Center(
-        /*
-        child: Image(
-          image: NetworkImage(
-            'https://i.pinimg.com/originals/ed/51/6a/ed516a5eeee9a2daa8d3a6fd89be66cf.jpg'
-          ),
-        ),*/
-        child: Text(
-      "Hello there",
-      style: TextStyle(
-        fontSize: 20.0,
-        color: Colors.red
-      ),
+        appBar: AppBar(
+          title: Center(child: Text("THE APP")),
+          backgroundColor: Colors.greenAccent,
+        ),
+        body: Center(
+            child: RichText(
+    text: TextSpan(
+      children: [
+        TextSpan(
+          text: "Need an account?",
+          style: TextStyle(
+            fontSize: 20.0,
+            color: Colors.black,
+          )
+        ),
+        TextSpan(
+          text:" Sign Up",
+          style: TextStyle(
+            fontSize: 25,
+            color: Colors.blue,
+            decoration: TextDecoration.underline,
+          )
+
+        ),
+      ]
     )),
-    floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          print("Tapping");
-        },
-        backgroundColor: Colors.red,
-        child: Text("Tap")),
-  )));
+    )
+      ),
+    );
+  }
 }
