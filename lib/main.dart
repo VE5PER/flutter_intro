@@ -12,35 +12,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Center(child: Text("THE APP")),
-          backgroundColor: Colors.greenAccent,
-        ),
-        body: Center(
-            child: RichText(
-    text: TextSpan(
-      children: [
-        TextSpan(
-          text: "Need an account?",
-          style: TextStyle(
-            fontSize: 20.0,
-            color: Colors.black,
-          )
-        ),
-        TextSpan(
-          text:" Sign Up",
-          style: TextStyle(
-            fontSize: 25,
-            color: Colors.blue,
-            decoration: TextDecoration.underline,
-          )
-
-        ),
-      ]
-    )),
-    )
-      ),
-    );
+        home: Scaffold(
+            appBar: AppBar(
+              title: Center(child: Text("THE APP")),
+              backgroundColor: Colors.greenAccent,
+            ),
+            body: Center(
+              child: Image(
+                image: AssetImage('images/i2.jpg'),
+              ),
+            )));
   }
 }
