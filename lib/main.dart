@@ -1,9 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(MaterialApp(
+    home: MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -11,36 +11,48 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: Center(child: Text("THE APP")),
-          backgroundColor: Colors.greenAccent,
-        ),
-        body: Center(
-            child: RichText(
-    text: TextSpan(
+    return Scaffold(
+        body: Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        TextSpan(
-          text: "Need an account?",
-          style: TextStyle(
-            fontSize: 20.0,
-            color: Colors.black,
-          )
+        widget_fn(4, "0xff8D43B3"),
+        Padding(padding: EdgeInsets.all(3.0)),
+        Expanded(
+          flex: 4,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              widget_fn(5, "0xff2AA650"),
+              Padding(padding: EdgeInsets.all(3.0)),
+              Expanded(
+                  flex: 5,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      widget_fn(2, "0xff58AAE8"),
+                      Padding(padding: EdgeInsets.all(3.0)),
+                      widget_fn(8, "0xffE73E33"),
+                    ],
+                  )),
+            ],
+          ),
         ),
-        TextSpan(
-          text:" Sign Up",
-          style: TextStyle(
-            fontSize: 25,
-            color: Colors.blue,
-            decoration: TextDecoration.underline,
-          )
-
-        ),
-      ]
-    )),
-    )
-      ),
-    );
+        Padding(padding: EdgeInsets.all(3.0)),
+        widget_fn(2, "0xfffff900")
+      ],
+    ));
   }
+}
+
+Widget widget_fn(int flx, String colorval) {
+  return (Expanded(
+      flex: flx,
+      child: Container(
+        color: Color(int.parse(colorval)),
+        child: Center(
+          child: Text("#$colorval",
+              style: TextStyle(color: Colors.white, fontSize: 15),
+              textAlign: TextAlign.center),
+        ),
+      )));
 }
