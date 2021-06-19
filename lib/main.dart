@@ -21,7 +21,7 @@ class _MyPageState extends State<MyPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.red,
+      backgroundColor: Colors.teal,
         body: SafeArea(
           child: Column(
             children: [
