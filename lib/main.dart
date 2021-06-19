@@ -31,7 +31,6 @@ class _MyPageState extends State<MyPage> {
               TextField(
                 controller: _textcontroller ,
 
-
                 obscureText: _secureText,
 
                 decoration: InputDecoration(
