@@ -21,6 +21,7 @@ class _MyPageState extends State<MyPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.teal,
         body: SafeArea(
           child: Column(
             children: [
@@ -34,22 +35,22 @@ class _MyPageState extends State<MyPage> {
                 obscureText: _secureText,
 
                 decoration: InputDecoration(
-                  hintText: "Enter Password",
-                  errorText: _errorMsg,
-                  labelText:"Password",
-                  hintStyle: TextStyle(color: Colors.greenAccent),
-                  labelStyle: TextStyle(color: Colors.red),
-                  border: OutlineInputBorder(),
-                  fillColor: Colors.white,
-                  filled: true,
-                  prefixIcon: Icon(Icons.security),
-                  suffixIcon: IconButton(icon: Icon(
-                    _secureText ? Icons.visibility_off : Icons.visibility
-                  ), onPressed: () {
-                    setState(() {
-                      _secureText= !_secureText;
-                    });
-                  },)
+                    hintText: "Enter Password",
+                    errorText: _errorMsg,
+                    labelText:"Password",
+                    hintStyle: TextStyle(color: Colors.greenAccent),
+                    labelStyle: TextStyle(color: Colors.red),
+                    border: OutlineInputBorder(),
+                    fillColor: Colors.white,
+                    filled: true,
+                    prefixIcon: Icon(Icons.security),
+                    suffixIcon: IconButton(icon: Icon(
+                        _secureText ? Icons.visibility_off : Icons.visibility
+                    ), onPressed: () {
+                      setState(() {
+                        _secureText= !_secureText;
+                      });
+                    },)
 
                 ),
               ),
