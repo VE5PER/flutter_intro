@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(MaterialApp(home: MyPage()));
@@ -50,6 +51,8 @@ class _MyPageState extends State<MyPage> {
                   child: TextField(
                     style: TextStyle(color: Colors.teal),
                     keyboardType: TextInputType.number,
+                    maxLength: 10,
+                    maxLengthEnforcement: MaxLengthEnforcement.enforced,
                     decoration: InputDecoration(
                       prefixIcon: Icon(
                         Icons.phone,
@@ -99,3 +102,4 @@ Widget textGen(String inp, double size, String clr) {
     ),
   );
 }
+
