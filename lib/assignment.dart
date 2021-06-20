@@ -36,7 +36,7 @@ class _MyPageState extends State<MyPage> {
                           fit: BoxFit.cover,
                         ))),
                 textGen("Saurav S", 60, "0xFFFFFFFF"),
-                textGen("Flutter Developer", 30, "0xFF64FFDA"),
+                textGen("Flutter Developer", 45, "0xFF64FFDA"),
                 Divider(
                   color: Colors.white,
                   thickness: 1.2,
