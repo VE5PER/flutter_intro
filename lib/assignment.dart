@@ -27,8 +27,8 @@ class _MyPageState extends State<MyPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Container(
-                    width: 200,
-                    height: 200,
+                    width: 250,
+                    height: 250,
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
@@ -36,7 +36,7 @@ class _MyPageState extends State<MyPage> {
                           fit: BoxFit.cover,
                         ))),
                 textGen("Saurav S", 60, "0xFFFFFFFF"),
-                textGen("Flutter Developer", 45, "0xFF64FFDA"),
+                textGen("Flutter Developer", 45 , "0xFF64FFDA"),
                 Divider(
                   color: Colors.white,
                   thickness: 1.2,
@@ -97,6 +97,7 @@ Widget textGen(String inp, double size, String clr) {
     inp,
     style: TextStyle(
       fontSize: size,
+      letterSpacing: 3.0,
       fontFamily: 'Pacifico',
       color: Color(int.parse(clr)),
     ),
