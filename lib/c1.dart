@@ -29,37 +29,42 @@ class _MyPageState extends State<MyPage> {
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         image: DecorationImage(
-                          image: AssetImage('assets/images/corgi1.jpg'),
+                          image: AssetImage('assets/images/img1.jpg'),
                           fit: BoxFit.cover,
                         ))),
-                textGen("Saurav S", 60, "0xFFFFFFFF"),
-                textGen("Flutter Developer", 45 , "0xFF64FFDA"),
+                Text(
+                  "Name",
+                  style: TextStyle(
+                    fontSize: 60,
+                    fontFamily: 'Pacifico',
+                    color: Colors.white,
+                  ),
+                ),
+                Text(
+                  "Flutter Developer",
+                  style: TextStyle(
+                    fontSize: 40,
+                    fontFamily: 'Pacifico',
+                    color: Colors.tealAccent,
+                  ),
+                ),
                 Divider(
                   color: Colors.white,
                   thickness: 1.2,
                   indent: 150,
                   endIndent: 150,
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 60,
-                    vertical: 6,
-                  ),
-                  child: TextField(
-                    style: TextStyle(color: Colors.teal),
-                    keyboardType: TextInputType.number,
-                    maxLength: 10,
-                    maxLengthEnforcement: MaxLengthEnforcement.enforced,
-                    decoration: InputDecoration(
-                      prefixIcon: Icon(
-                        Icons.phone,
-                        color: Colors.teal,
-                      ),
-                      labelStyle: TextStyle(color: Colors.teal),
-                      border: OutlineInputBorder(),
-                      fillColor: Colors.white,
-                      filled: true,
+                Card(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 60,
+                      vertical: 6,
                     ),
+                    child: ListTile(
+                      leading: Icon(Icons.phone),
+                      title: Text("9234123"),
+                      
+                    )
                   ),
                 ),
                 Padding(
@@ -87,17 +92,5 @@ class _MyPageState extends State<MyPage> {
           ),
         ));
   }
-}
-
-Widget textGen(String inp, double size, String clr) {
-  return Text(
-    inp,
-    style: TextStyle(
-      fontSize: size,
-      letterSpacing: 3.0,
-      fontFamily: 'Pacifico',
-      color: Color(int.parse(clr)),
-    ),
-  );
 }
 
