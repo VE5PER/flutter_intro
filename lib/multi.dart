@@ -10,7 +10,8 @@ class MyPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String value = '';
+    String value1 = '';
+    String value2 = '';
     return Scaffold(
       appBar: AppBar(
         title: Text("Base"),
@@ -20,7 +21,12 @@ class MyPage extends StatelessWidget {
         children: [
           TextField(
             onChanged: (text) {
-              value = text;
+              value1 = text;
+            },
+          ),
+          TextField(
+            onChanged: (text) {
+              value2 = text;
             },
           ),
           Center(
@@ -29,7 +35,10 @@ class MyPage extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => MyPage2(value: value)));
+                        builder: (context) => MyPage2(
+                              value1: value1,
+                              value2: value2,
+                            )));
               },
               child: Text("New Stateless Page"),
             ),
@@ -43,7 +52,7 @@ class MyPage extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => MyPage3(value: value)));
+                        builder: (context) => MyPage3(value: value1)));
               },
               child: Text("New Stateful Page"),
             ),
@@ -55,8 +64,9 @@ class MyPage extends StatelessWidget {
 }
 
 class MyPage2 extends StatelessWidget {
-  final value;
-  const MyPage2({Key? key, @required this.value}) : super(key: key);
+  final value1, value2;
+  const MyPage2({Key? key, @required this.value1, @required this.value2})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +78,8 @@ class MyPage2 extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(value),
+          Text(value1),
+          Text(value2),
           Center(
             child: ElevatedButton(
               onPressed: () {
