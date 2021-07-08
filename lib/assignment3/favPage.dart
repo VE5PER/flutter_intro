@@ -12,19 +12,23 @@ class favPage extends StatelessWidget {
         title: Text("Your Favorites!"),
       ),
       body: Container(
-
         child: ListView.builder(
-            itemBuilder: (context, index) {
-
-          return Card(
-            color: Colors.greenAccent,
-            margin: EdgeInsets.all(10),
-            elevation: 5,
-            child: Center(child: Text(value[index],style: TextStyle(
-              fontSize: 30,
-            ),)),
-          );
-        },itemCount: value.length,),
+          itemBuilder: (context, index) {
+            return Card(
+              color: Colors.greenAccent,
+              margin: EdgeInsets.all(10),
+              elevation: 5,
+              child: Center(
+                  child: Text(
+                value[index],
+                style: TextStyle(
+                  fontSize: 30,
+                ),
+              )),
+            );
+          },
+          itemCount: value.length,
+        ),
       ),
     );
   }

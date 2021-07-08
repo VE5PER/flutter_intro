@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
             Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => favPage(value:favorites)));
+                    builder: (context) => favPage(value: favorites)));
           } else {
             alert(context);
           }
