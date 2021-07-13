@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'result.dart';
 
 void main() {
   runApp(MaterialApp(debugShowCheckedModeBanner: false, home: MyPage()));
@@ -13,11 +14,13 @@ class MyPage extends StatefulWidget {
 
 class _MyPageState extends State<MyPage> {
   bool genderChoice = true;
-  double heightVal = 160;
-  double weightVal=60;
-  double age=20;
+
+  num age = 20;
+  num heightVal = 160;
+  num weightVal = 60;
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFF0A0C23),
@@ -37,7 +40,7 @@ class _MyPageState extends State<MyPage> {
                   onTap: () {
                     setState(() {
                       genderChoice = true;
-                      weightVal=60;
+                      weightVal = 60;
                     });
                   },
                   child: gender("MALE", Icons.male, genderChoice),
@@ -49,14 +52,14 @@ class _MyPageState extends State<MyPage> {
                   onTap: () {
                     setState(() {
                       genderChoice = false;
-                      weightVal=50;
+                      weightVal = 50;
                     });
                   },
                   child: gender("FEMALE", Icons.female, !genderChoice),
                 ),
               ),
             ]),
-              Container(
+            Container(
               padding: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
               decoration: BoxDecoration(
                   shape: BoxShape.rectangle,
@@ -91,7 +94,7 @@ class _MyPageState extends State<MyPage> {
                         inactiveColor: Colors.grey,
                         min: genderChoice ? 150 : 120,
                         max: genderChoice ? 220 : 180,
-                        value: heightVal,
+                        value: heightVal.toDouble(),
                         onChanged: (val) {
                           setState(() {
                             heightVal = val;
@@ -108,7 +111,6 @@ class _MyPageState extends State<MyPage> {
                 Expanded(
                   flex: 1,
                   child: Container(
-
                     margin: EdgeInsets.symmetric(horizontal: 5),
                     padding: EdgeInsets.all(20),
                     child: Column(
@@ -153,7 +155,7 @@ class _MyPageState extends State<MyPage> {
                               InkWell(
                                 onTap: () {
                                   setState(() {
-                                    weightVal++ ;
+                                    weightVal++;
                                   });
                                 },
                                 child: Container(
@@ -181,86 +183,112 @@ class _MyPageState extends State<MyPage> {
                   ),
                 ),
                 Expanded(
-                  flex: 1,
-                  child: Container(
-
-                    margin: EdgeInsets.symmetric(horizontal: 5),
-                    padding: EdgeInsets.all(20),
-                    child: Column(
-                      children: [
-                        Text(
-                          "AGE",
-                          style: TextStyle(color: Colors.grey, fontSize: 20),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 10),
-                          child: Text(
-                            age.toString(),
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 45,
-                              fontWeight: FontWeight.bold,
+                    flex: 1,
+                    child: Container(
+                      margin: EdgeInsets.symmetric(horizontal: 5),
+                      padding: EdgeInsets.all(20),
+                      child: Column(
+                        children: [
+                          Text(
+                            "AGE",
+                            style: TextStyle(color: Colors.grey, fontSize: 20),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10),
+                            child: Text(
+                              age.toString(),
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 45,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 10),
-                          child: Row(
-                            children: [
-                              InkWell(
-                                onTap: () {
-                                  setState(() {
-                                    age --;
-                                  });
-
-                                },
-                                child: Container(
-                                  padding: EdgeInsets.all(7),
-                                  child: Icon(
-                                    Icons.remove,
-                                    color: Colors.white,
-                                    size: 45,
+                          Padding(
+                            padding: const EdgeInsets.only(top: 10),
+                            child: Row(
+                              children: [
+                                InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      age--;
+                                    });
+                                  },
+                                  child: Container(
+                                    padding: EdgeInsets.all(7),
+                                    child: Icon(
+                                      Icons.remove,
+                                      color: Colors.white,
+                                      size: 45,
+                                    ),
+                                    decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: Color(0xff1c1e33)),
                                   ),
-                                  decoration: BoxDecoration(
-                                      shape: BoxShape.circle, color: Color(0xff1c1e33)),
                                 ),
-                              ),
-                              InkWell(
-                                onTap: () {
-                                  setState(() {
-                                    age ++;
-                                  });
-
-                                },
-                                child: Container(
-                                  margin: EdgeInsets.symmetric(horizontal: 8),
-                                  padding: EdgeInsets.all(7),
-                                  child: Icon(
-                                    Icons.add,
-                                    color: Colors.white,
-                                    size: 45,
+                                InkWell(
+                                  onTap: () {
+                                    setState(() {
+                                      age++;
+                                    });
+                                  },
+                                  child: Container(
+                                    margin: EdgeInsets.symmetric(horizontal: 8),
+                                    padding: EdgeInsets.all(7),
+                                    child: Icon(
+                                      Icons.add,
+                                      color: Colors.white,
+                                      size: 45,
+                                    ),
+                                    decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        color: Color(0xff1c1e33)),
                                   ),
-                                  decoration: BoxDecoration(
-                                      shape: BoxShape.circle, color: Color(0xff1c1e33)),
                                 ),
-                              ),
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                    decoration: BoxDecoration(
-                        shape: BoxShape.rectangle,
-                        borderRadius: BorderRadius.circular(15),
-                        color: Color(0xFF111428)),
-                  )
-                ),
+                              ],
+                            ),
+                          )
+                        ],
+                      ),
+                      decoration: BoxDecoration(
+                          shape: BoxShape.rectangle,
+                          borderRadius: BorderRadius.circular(15),
+                          color: Color(0xFF111428)),
+                    )),
               ],
             )
           ],
         ),
       ),
       backgroundColor: Color(0xFF090C20),
+      bottomNavigationBar: InkWell(
+        onTap: () {
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => result(
+                        weight: weightVal,
+                        height: heightVal.round(),
+                        age: age,
+                        gender: genderChoice,
+                      )));
+        },
+        child: Container(
+          height: 65,
+          decoration: BoxDecoration(
+            color: Color(0xFFea1554),
+          ),
+          child: Center(
+            child: Text(
+              "CALCULATE YOUR BMI",
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
@@ -268,22 +296,22 @@ class _MyPageState extends State<MyPage> {
 Widget gender(String type, IconData icon, bool select) {
   return Container(
     margin: EdgeInsets.symmetric(horizontal: 5),
-    padding: EdgeInsets.all(35),
+    padding: EdgeInsets.all(25),
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Icon(icon, color: select ? Colors.white : Colors.grey, size: 75),
+        Icon(icon, color: select ? Colors.white : Colors.grey, size: 65),
         Padding(
-          padding: const EdgeInsets.only(top: 10),
+          padding: const EdgeInsets.only(top: 8),
           child: Text(type,
               style: TextStyle(
-                  color: select ? Colors.white : Colors.grey, fontSize: 25)),
+                  color: select ? Colors.white : Colors.grey, fontSize: 20)),
         ),
       ],
     ),
     decoration: BoxDecoration(
         shape: BoxShape.rectangle,
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(10),
         color: Color(0xFF1d1f33)),
   );
 }
