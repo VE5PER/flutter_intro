@@ -20,7 +20,6 @@ class _MyPageState extends State<MyPage> {
   num weightVal = 60;
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFF0A0C23),
