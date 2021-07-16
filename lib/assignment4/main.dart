@@ -19,6 +19,8 @@ class _MyPageState extends State<MyPage> {
   num heightVal = 160;
   num weightVal = 60;
   @override
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(

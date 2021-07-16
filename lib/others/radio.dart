@@ -74,11 +74,3 @@ class _MyPageState extends State<MyPage> {
 }
 
 
-
-class User  {
-  int userId;
-  String firstName;
-  String lastName;
-  User({this.userId=0,this.firstName='',this.lastName=''});
-  static List<User>
-}
